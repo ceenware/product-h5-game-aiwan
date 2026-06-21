@@ -3,64 +3,64 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<meta charset="UTF-8" />
-		<title>HTML5打地鼠小游戏</title>
-		<meta name="description" content="这是一个基于HTML5 Canvas和Audio开发的游戏" />
-		<meta name="keywords"  content="HTML5,Canvas,HTML5游戏, HTML5版打地鼠" />
+		<title>HTML5Whack-a-Molemini game</title>
+		<meta name="description" content="textbased onHTML5 CanvastextAudiotextGame" />
+		<meta name="keywords" content="HTML5,Canvas,HTML5Game, HTML5textWhack-a-Mole" />
 		<link type="text/css" rel="stylesheet" href="css/main.css" />
 	</head>
 	<body>
 		<div id="hitmouse">
-			<!-- 预备界面 -->
+			<!-- Ready screen -->
 			<div id="gameCover" class="block background">
-				<!-- 声音控制按钮 -->
+				<!-- textControltext -->
 				<a href="javascript:void(0)" id="btnSound" class="icon">&nbsp;</a>
-				<!-- 开始 -->
+				<!-- Start -->
 				<a href="javascript:void(0)" id="btnPlay" class="icon">&nbsp;</a>
-				<!-- 帮助 -->
+				<!-- text -->
 				<a href="javascript:void(0)" id="btnHelp" class="icon">&nbsp;</a>
-				<!-- 关于我 -->
+				<!-- Abouttext -->
 				<a href="javascript:void(0)" id="btnAboutMe" class="icon">&nbsp;</a>
-				<!-- 加载资源 -->
+				<!-- text -->
 				<span id="progressText"></span>		
 			</div>	
-			<!-- 帮助界面 -->
+			<!-- text -->
 			<div id="HelpDiv" >
-			  <!-- 帮助图片 -->
-			  <img src="images/help.png"/>
-			  <a href="javascript:void(0)" id="btnBack" class="icon">&nbsp;</a>
+			 <!-- text -->
+			 <img src="images/help.png"/>
+			 <a href="javascript:void(0)" id="btnBack" class="icon">&nbsp;</a>
 			</div>
-			<!-- 游戏主体 -->
+			<!-- Game body -->
 			<div id="gameBody" class="block">
 				<div id="gameCanvas" class="block">
-					<!-- Main背景层 -->
+					<!-- Maintext -->
 					<canvas width="750" height="550" id="maincanvas" ></canvas>
 				</div>
-				<!-- 分数及暂停按钮 -->
+				<!-- ScoretextPausetext -->
 				<div id="numberAndPause" class="block">
-					<!-- 分数 -->
+					<!-- Score -->
 					<div id="numberBefore" class="icon"></div>
 					<div id="number" ></div>
-					<!-- 暂停 -->
+					<!-- Pause -->
 					<a href="javascript:void(0)" id="btnPause" class="icon">&nbsp;</a>
 				</div>
-				<!-- 下一关提示 -->
-			  <div id="nextLoding">
-					<!-- 分数 -->
+				<!-- Next LevelHint -->
+			 <div id="nextLoding">
+					<!-- Score -->
 					<span id="currentScore"></span>
 					<spqn id="requireScore" ></span>
-		     </div>
+		 </div>
 			</div>
-			<!-- 游戏结束 -->
+			<!-- Game Over -->
 			<div id="gameOver" class="block">
-				<!-- 得分 -->
+				<!-- Score -->
 				<span id="score"></span>
-				<!-- 准备 -->
+				<!-- Ready -->
 				<a href="javascript:void(0)" id="btnRetry" class="icon">&nbsp;</a>
-				<!-- 返回主菜单 -->
+				<!-- BacktextMenu -->
 				<a href="javascript:void(0)" id="btnBackToMenu" class="icon">&nbsp;</a>			
 			</div>
 		</div>
-		<!--我使用这个框架的代码并不多，主要是工具类使用-->
+		<!--text, text-->
 		<script type="text/javascript" src="myEngine/core/my.js"></script>
 		<script type="text/javascript" src="myEngine/component/Component.js"></script>
 		<script type="text/javascript" src="myEngine/component/DisplayObject.js"></script>
@@ -72,8 +72,8 @@
 		 
 		<script type="text/javascript" src="js/resources/images.js"></script>
 		<script type="text/javascript" src="js/resources/audios.js"></script>
-        <script type="text/javascript" src="js/frames/mouse.js"></script>
-        <script type="text/javascript" src="js/frames/star.js"></script>
+ <script type="text/javascript" src="js/frames/mouse.js"></script>
+ <script type="text/javascript" src="js/frames/star.js"></script>
 		<script type="text/javascript" src="js/frames/score.js"></script>
 	 	<script type="text/javascript" src="js/classes/Audio.js"></script>
 		<script type="text/javascript" src="js/classes/Animation.js"></script>

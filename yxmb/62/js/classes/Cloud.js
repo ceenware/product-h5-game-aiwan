@@ -1,33 +1,21 @@
 /**
- * 云朵践踏效果
+ * text
  */
-(function() {
+(function() {var Cloud = function(cfg) {Cloud.superclass.constructor.call(this, cfg);}
+ my.inherit(Cloud, my.Sprite);
 
-    var Cloud = function(cfg) {
+ /**
+ * Initialize
+ */
+ Cloud.prototype.init = function() {var anim = new my.Animation({image: my.ImageManager.get('cloud'),
+ frames: getEffectFrames('cloud'),
+ loop: false});
+ this.anim = anim;
 
-        Cloud.superclass.constructor.call(this, cfg);
-    }
-    my.inherit(Cloud, my.Sprite);
+ var self = this;
+ anim.onend = function() {self.destory();}
+ anim.init();
+ anim.play();
+ Cloud.superclass.init.call(this);}
 
-    /**
-     * 初始化
-     */
-    Cloud.prototype.init = function() {
-        var anim = new my.Animation({
-            image : my.ImageManager.get('cloud'),
-            frames : getEffectFrames('cloud'),
-            loop : false
-        });
-        this.anim = anim;
-
-        var self = this;
-        anim.onend = function() {
-            self.destory();
-        }
-        anim.init();
-        anim.play();
-        Cloud.superclass.init.call(this);
-    }
-
-    window.Cloud = Cloud;
-})();
+ window.Cloud = Cloud;})();

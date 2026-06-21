@@ -1,86 +1,62 @@
-﻿/*!
- * 键盘控制脚本
+/*!
+ * keytextControltext
  */
 
-//公共变量：
+//text: 
 var _focusUni = null;
 //var _focuseUni2 = null;
 
 
 
-/**各种事件绑定（大多数是一次性绑定。不要重复操作）*/
-function BindEvents(){
-
-	$(window).resize(function(){resizeContainer(); });
+/**textBind events (large text. text) */
+function BindEvents(){$(window).resize(function(){resizeContainer();});
 	bindKeyboardEvent();
 	bindTableUniEvent();
-//	$("#scorePanel .uni").each(function(){bindScoreBarEvent(this);});
+//	$("#scorePanel.uni").each(function(){bindScoreBarEvent(this);});
 	$("#cartoonPanel").click(function(){$(this).hide();});
-/*	$("#fuckA").click(function(){
-		if(_sumScore>0)	HappyShoot();
-		else	showGamingTit("What?!",0,1500);
-	});
-*/	
-}
+/*	$("#fuckA").click(function(){if(_sumScore>0)	HappyShoot();
+		else	showGamingTit("What?!",0,1500);});
+*/}
 
 ////////////////////////////////////////////////////////////////////////////
 
 /**
-*游戏盘中棋子的鼠标拖拽事件
+*Gametextmiddletext
 */
-function bindTableUniEvent(){
-	$( "#panelTb .uni" ).each(function(){
-		uniEvt($(this));
-	});
-}
+function bindTableUniEvent(){$("#panelTb.uni").each(function(){uniEvt($(this));});}
 
 
 
 /**************************************************/
 
 /**
-*为棋子添加基础事件
-*@param:Obj 封装的棋子对象
+*textaddtext
+*@param:Obj textobject
 */
-function uniEvt(Obj){
-	Obj
-	.mousedown( function(){
-//		debug("down:"+_focusUni)
-		//聚焦并启动变形效果：
-		if(_focusUni!=null){
-			reform($(_focusUni));
+function uniEvt(Obj){Obj.mousedown(function(){//		debug("down:"+_focusUni)
+		//text: 
+		if(_focusUni!=null){reform($(_focusUni));
 			
 			//++++++++++++++++++++++++++
-			//交换两个可以交换的棋子：
-			if(_focusUni != this){
-				var TD2 = $(this).parent();
+			//text: 
+			if(_focusUni!= this){var TD2 = $(this).parent();
 				var TD = $(_focusUni).parent();
-				//点击交换:
+				//point text:
 				switch2TDsUni_orgPlace(TD,TD2,true,true);
-				moveToZero(TD,TD2,"fast");
-			}
+				moveToZero(TD,TD2,"fast");}
 			//++++++++++++++++++++++++++
-			_focusUni=null;
-		}else{
-			_focusUni = this; //记录当前焦点对象
-			deform1A($(this));//变形
-		}
-	});
+			_focusUni=null;}else{_focusUni = this; //textpointobject
+			deform1A($(this));//text}});
 	
-/*	
-	.draggable({ 
-		containment: "#panelTb", 
+/*.draggable({containment: "#panelTb", 
 		scroll: false, 
 		stack:"#panelTb td",
 		
-		start: function() {
-		},
-		drag: function() {
-		},
-		stop: function() {
-			var TD =$(this).parent();
-			var wi = parseInt( TD.css("width"));
-			var hi = parseInt( TD.css("height"));
+		start: function() {},
+		drag: function() {},
+		stop: function() {var TD =$(this).parent();
+			var wi = parseInt(TD.css("width"));
+			var hi = parseInt(TD.css("height"));
 			
 			var x= parseInt($(this).css("left"));
 			var y =parseInt($(this).css("top"));
@@ -88,9 +64,8 @@ function uniEvt(Obj){
 			var col = Math.round(x/wi);
 			var row =Math.round(y/hi);
 			
-			//移动:
-			if(col!=0 || row!=0){
-				var id=TD.attr("id");
+			//Move:
+			if(col!=0 || row!=0){var id=TD.attr("id");
 				var ss = id.split("_");
 				var row2 = parseInt(ss[1])+row;
 				var col2 = parseInt(ss[2])+col;
@@ -99,83 +74,52 @@ function uniEvt(Obj){
 				switch2TDsUni_orgPlace(TD, TD2, true, false);
 				moveToZero(TD,TD2,"fast");
 				
-				//gameTimeGoBy();//<<<<<<<----------------------------------游戏时间度过
-			}else{
-				mZero(TD,"fast");
-			}
-		}	
- });
-*/
-
-
-}
+				//gameTimeGoBy();//<<<<<<<----------------------------------Game Timetext}else{mZero(TD,"fast");}}});
+*/}
 /**************************************************/
 
 
-/**绑定分数榜的图标点击事件*/
-function bindScoreBarEvent(o){
-/*	$(o)
-	.bind("mousedown",function(){ //鼠标按下
+/**textScoretextpoint text*/
+function bindScoreBarEvent(o){/*	$(o).bind("mousedown",function(){//textdown
 		var typeN = $(o).find("img:first").attr("lang");
-		var b = addScore(typeN, _oneSexyMovieCost); //注意！
-		if(b==true){
-			showSexyCartoon2();
-		}else{
-			showGamingTit("战斗力不足!",0,500);
-		}
-	});
-*/
-}
+		var b = addScore(typeN, _oneSexyMovieCost); //Note!
+		if(b==true){showSexyCartoon2();}else{showGamingTit("text!",0,500);}});
+*/}
 
 
 
-/*移除所有棋子单元的所有事件*/
-function unbindAllEvents(){
-	$(".uni").unbind().css({cursor:"default"});
-}
+/*text*/
+function unbindAllEvents(){$(".uni").unbind().css({cursor:"default"});}
 
 
-function bindKeyboardEvent(){
-	$(window).keydown(function(event){	
-//		debug("KEY:"+event.keyCode)
+function bindKeyboardEvent(){$(window).keydown(function(event){//		debug("KEY:"+event.keyCode)
 		
-		if(_focusUni != null){
-			reform($(_focusUni)); //移动前回复形变
+		if(_focusUni!= null){reform($(_focusUni)); //Movetext
 			var b;
-			switch(event.keyCode) {
-					case 65: //'A' (左移)
+			switch(event.keyCode) {case 65: //'A' (lefttext)
 					case 37: //left arrow
 						b = moveUni2(_focusUni, "lf");
 						break;
-					case 87: //'W' (上移)
+					case 87: //'W' (uptext)
 					case 38: //up arrow
 						b = moveUni2(_focusUni, "up");
 						break;
-					case 68: //'D' (右移)
+					case 68: //'D' (righttext)
 					case 39: //right arrow
 						b = moveUni2(_focusUni, "rt");
 						break;
-					case 83: //'S' (下移)
+					case 83: //'S' (downtext)
 					case 40: //down arrow
 						b = moveUni2(_focusUni, "dn");
 						break;
-					default:
-						;//do nothing;
-			}
-		}
-	});
-}
+					default:;//do nothing;}}});}
 
 
 /**
-*绑定结束面板中相应的事件
+*textmiddletext
 */
-function bindEPEvts(){
-	//补充最冠军棋子的点击事件：
-/*	$("#endPanel #aWinner").click(function(){
-		showWinner();
-	});*/
-}
+function bindEPEvts(){//textpoint text: 
+/*	$("#endPanel #aWinner").click(function(){showWinner();});*/}
 
 
 

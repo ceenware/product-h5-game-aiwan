@@ -1,29 +1,15 @@
-﻿function a_init() {
-	updateShare(0);
-}
+function a_init() {updateShare(0);}
 
-function goHome() {
-	window.location.href ='http://game.024qianzheng.cn';
-}
+function goHome() {window.location.href ='http://game.024qianzheng.cn';}
 
-function a_submitScore(score) {
-	updateShareScore(score);
-	//show_share();
-}
+function a_submitScore(score) {updateShareScore(score);
+	//show_share();}
 
-function updateShare(bestScore) {
-	imgUrl = 'http://game.024qianzheng.cn/3dbear/3dbearicon.png';
+function updateShare(bestScore) {imgUrl = 'http://game.024qianzheng.cn/3dbear/3dbearicon.png';
 	lineLink = 'http://game.024qianzheng.cn/3dbear/3dbear.htm';
-	descContent = "反向跑酷没玩过吧？快来一起跑！";
+	descContent = "text?text!";
 	updateShareScore(bestScore);
-	appid = '';
-}
+	appid = '';}
 
-function updateShareScore(bestScore) {
-	if(bestScore > 0) {
-		shareTitle = "我在《3D熊出没》被追了" + bestScore + "米，你跑了多远？！";
-	}
-	else{
-		shareTitle = "超华丽跑酷《3D熊出没》，你能跑多远？";
-	}
-}
+function updateShareScore(bestScore) {if(bestScore > 0) {shareTitle = "text"3D Bear Adventure"text" + bestScore + "text, text?!";}
+	else{shareTitle = "text"3D Bear Adventure", text?";}}

@@ -1,28 +1,16 @@
-(function(window){
-	'use strict';
+(function(window){'use strict';
 
-	function Score(){
-		this.canvas = new Canvas('score',100,70);
+	function Score(){this.canvas = new Canvas('score',100,70);
 		this.score = 0;
 
-		this._init();
+		this._init();}
 
-	}
+	Score.prototype = {constructor:Score,
 
-	Score.prototype = {
-		constructor:Score,
-
-		_init:function(){
+		_init:function(){this._render();},
+		_render:function(){//ControlcontextDraw score
+			this.canvas.drawText(this.score);},
+		addScore:function(value){this.score+=value;
 			this._render();
-		},
-		_render:function(){    //控制context绘制得分
-			this.canvas.drawText(this.score);
-		},
-		addScore:function(value){
-			this.score+=value;
-			this._render();
-			return this.score;
-		}
-	};
-	window.Score = Score;
-})(window);
+			return this.score;}};
+	window.Score = Score;})(window);

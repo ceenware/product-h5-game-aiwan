@@ -1,10 +1,8 @@
 /**
- * 键盘按钮
+ * keytext
  */
 
-var Keyboard = function(){
-	
-	this.UP = 38;
+var Keyboard = function(){this.UP = 38;
 	this.DOWN = 40;
 	this.RIGHT = 39;
 	this.LEFT = 37;
@@ -51,8 +49,6 @@ var Keyboard = function(){
 	this.W = 87;
 	this.X = 88;
 	this.Y = 89;
-	this.Z = 90;
-
-};
+	this.Z = 90;};
 
 var keyboard = new Keyboard();

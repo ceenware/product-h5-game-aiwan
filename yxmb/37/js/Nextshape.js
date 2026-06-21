@@ -1,27 +1,16 @@
-(function(window){
-	'use strict';
+(function(window){'use strict';
 
-	function NextShape(){
-		this.canvas = new Canvas('nextshape',100,70);
+	function NextShape(){this.canvas = new Canvas('nextshape',100,70);
 		
-		this._init();
+		this._init();}
 
-	}
+	NextShape.prototype = {constructor:NextShape,
 
-	NextShape.prototype = {
-		constructor:NextShape,
-
-		_init:function(){
-			this.rows = 4;
-			this.cols = 6;
-		},
-		render:function(shape){    //对外的渲染  传参数********
+		_init:function(){this.rows = 4;
+			this.cols = 6;},
+		render:function(shape){//textRender textparameter********
 			this.canvas.clear();
-			shape.draw(this.canvas.context,20);  //新增右上角方块大小参数
+			shape.draw(this.canvas.context,20); //textrightuptextlarge smallparameter
 			//16*4~70.16~6~100
-			//在shape里面定位
-		}
-		
-	};
-	window.NextShape = NextShape;
-})(window);
+			//textshapetext}};
+	window.NextShape = NextShape;})(window);
